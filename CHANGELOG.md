@@ -2,6 +2,68 @@
 
 <!-- do not remove -->
 
+## 2.7.12
+
+### New Features
+
+- PyTorch 2.0 compatibility ([#3890](https://github.com/fastai/fastai/pull/3890)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Pytorch 2.0 compiler compatibility ([#3899](https://github.com/fastai/fastai/pull/3899)), thanks to [@ggosline](https://github.com/ggosline)
+- Better version support for `TensorBase.new_empty` ([#3887](https://github.com/fastai/fastai/pull/3887)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- TensorBase deepcopy Compatibility ([#3882](https://github.com/fastai/fastai/pull/3882)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+
+### Bugs Squashed
+
+- Fix `Learn.predict` Errors Out if Passed a PILImage ([#3884](https://github.com/fastai/fastai/pull/3884)), thanks to [@nglillywhite](https://github.com/nglillywhite)
+- Set DataLoaders device if not None and to exists ([#3873](https://github.com/fastai/fastai/pull/3873)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Fix `default_device` to correctly detect + use mps (Apple Silicon) ([#3858](https://github.com/fastai/fastai/pull/3858)), thanks to [@wolever](https://github.com/wolever)
+
+
+## 2.7.11
+
+### New Features
+
+- ChannelsLast Callback Improvements, Additional Documentation, & Bug Fix ([#3876](https://github.com/fastai/fastai/pull/3876)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Add support for a batch transforms `to` method ([#3875](https://github.com/fastai/fastai/pull/3875)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Allow Pillow Image to be passed to PILBase.create ([#3872](https://github.com/fastai/fastai/pull/3872)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Compat with latest numpy ([#3871](https://github.com/fastai/fastai/pull/3871)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Move training-only step to separate function in `Learner` ([#3857](https://github.com/fastai/fastai/pull/3857)), thanks to [@kunaltyagi](https://github.com/kunaltyagi)
+- TabularPandas data transform reproducibility ([#2826](https://github.com/fastai/fastai/issues/2826))
+
+### Bugs Squashed
+
+- Set DataLoaders device if not None and to exists ([#3873](https://github.com/fastai/fastai/pull/3873)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Fix `default_device` to correctly detect + use mps (Apple Silicon) ([#3858](https://github.com/fastai/fastai/pull/3858)), thanks to [@wolever](https://github.com/wolever)
+- Fix load hanging in distributed processes ([#3839](https://github.com/fastai/fastai/pull/3839)), thanks to [@muellerzr](https://github.com/muellerzr)
+- `default_device` logic is repeated twice, related to `mps` / OSX support. ([#3785](https://github.com/fastai/fastai/issues/3785))
+- revert auto-enable of mac mps due to pytorch limitations ([#3769](https://github.com/fastai/fastai/issues/3769))
+- Fix Classification Interpretation ([#3563](https://github.com/fastai/fastai/pull/3563)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- vision tutorial failed at `learner.fine_tune(1)` ([#3283](https://github.com/fastai/fastai/issues/3283))
+
+
+## 2.7.10
+
+### New Features
+
+- Add torch save and load kwargs ([#3831](https://github.com/fastai/fastai/pull/3831)), thanks to [@JonathanGrant](https://github.com/JonathanGrant)
+  - This lets us do nice things like set pickle_module to cloudpickle
+- PyTorch 1.13 Compatibility ([#3828](https://github.com/fastai/fastai/pull/3828)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+- Recursive copying of attribute dictionaries for TensorImage subclass ([#3822](https://github.com/fastai/fastai/pull/3822)), thanks to [@restlessronin](https://github.com/restlessronin)
+- `OptimWrapper` sets same param groups as `Optimizer` ([#3821](https://github.com/fastai/fastai/pull/3821)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+  - This PR harmonizes the default parameter group setting between `OptimWrapper` and `Optimizer` by modifying `OptimWrapper` to match `Optimizer`'s logic.
+- Support normalization of 1-channel images in unet ([#3820](https://github.com/fastai/fastai/pull/3820)), thanks to [@marib00](https://github.com/marib00)
+- Add `img_cls` param to `ImageDataLoaders` ([#3808](https://github.com/fastai/fastai/pull/3808)), thanks to [@tcapelle](https://github.com/tcapelle)
+  - This is particularly useful for passing `PILImageBW` for MNIST.
+- Add support for `kwargs` to `tensor()` when arg is an `ndarray` ([#3797](https://github.com/fastai/fastai/pull/3797)), thanks to [@SaadAhmedGit](https://github.com/SaadAhmedGit)
+- Add latest TorchVision models on fastai ([#3791](https://github.com/fastai/fastai/pull/3791)), thanks to [@datumbox](https://github.com/datumbox)
+- Option to preserve filenames in `download_images` ([#2983](https://github.com/fastai/fastai/pull/2983)), thanks to [@mess-lelouch](https://github.com/mess-lelouch)
+
+### Bugs Squashed
+
+- `get_text_classifier` fails with custom `AWS_LSTM` ([#3817](https://github.com/fastai/fastai/issues/3817))
+- revert auto-enable of mac mps due to pytorch limitations ([#3769](https://github.com/fastai/fastai/issues/3769))
+- Workaround for performance bug in PyTorch with subclassed tensors ([#3683](https://github.com/fastai/fastai/pull/3683)), thanks to [@warner-benjamin](https://github.com/warner-benjamin)
+
+
 ## 2.7.8
 
 ### New Features
